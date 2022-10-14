@@ -41,7 +41,7 @@ class InactiveDot extends StatelessWidget {
  */
 class CustomSliderWidget extends StatefulWidget {
   // final List<String> items;
-  final List items;
+  final List? items;
 
   CustomSliderWidget({this.items});
 
@@ -75,7 +75,7 @@ class _CustomSliderWidgetState extends State<CustomSliderWidget> {
               // autoPlay: true,
               viewportFraction: 1.0,
             ),
-            items: widget.items.map((item) {
+            items: widget.items!.map((item) {
               return Builder(
                 builder: (BuildContext context) {
                   return Stack(
@@ -99,7 +99,7 @@ class _CustomSliderWidgetState extends State<CustomSliderWidget> {
           bottom: 30,
           child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(widget.items.length, (idx) {
+              children: List.generate(widget.items!.length, (idx) {
                 return activeIndex == idx ? ActiveDot() : InactiveDot();
               })),
         )

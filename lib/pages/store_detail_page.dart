@@ -6,9 +6,9 @@ import 'package:grab_eat_ui/theme/styles.dart';
 import 'package:line_icons/line_icons.dart';
 
 class StoreDetailPage extends StatefulWidget {
-  final String img;
+  final String? img;
 
-  const StoreDetailPage({Key key, this.img}) : super(key: key);
+  const StoreDetailPage({Key? key, this.img}) : super(key: key);
   @override
   _StoreDetailPageState createState() => _StoreDetailPageState();
 }
@@ -59,7 +59,7 @@ class _StoreDetailPageState extends State<StoreDetailPage> {
                   height: 150,
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: NetworkImage(widget.img), fit: BoxFit.cover)),
+                          image: NetworkImage(widget.img!), fit: BoxFit.cover)),
                 ),
                 SafeArea(
                   child: Row(
